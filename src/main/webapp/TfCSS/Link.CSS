@@ -1,0 +1,19 @@
+header {
+    margin: 0;
+    padding: 0;
+}
+
+header table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+header td {
+    text-align: center;
+    white-space: nowrap;
+}
+
+header a {
+    margin: 0 10px;
+}
+
