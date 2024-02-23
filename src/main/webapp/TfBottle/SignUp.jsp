@@ -72,7 +72,7 @@
         }
     </script>
 
-
+    <jsp:include page="../link/Link.jsp"></jsp:include>
 </head>
 <body>
 <h1>회원가입</h1>

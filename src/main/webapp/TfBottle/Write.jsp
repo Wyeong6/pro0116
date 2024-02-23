@@ -90,13 +90,9 @@
                <td>내용</td>
                <td><textarea name="contents" ></textarea></td>
           </tr>
-          <tr>
-               <td>이름</td>
-               <td><textarea name="User" readonly></textarea></td>
-          </tr>
      </table>
           <div class="button-group">
-               <button type="button" onclick="location.href='List.jsp';">목록 보기</button>
+               <button type="button" onclick="location.href='/mvcboard/list.do';">목록 보기</button>
                <button type="reset">다시 입력</button>
                <button type="submit">작성 완료</button>
           </div>

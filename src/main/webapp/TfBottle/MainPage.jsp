@@ -13,7 +13,7 @@
 </head>
 <body>
     <jsp:include page="../link/Link.jsp"></jsp:include>
-    <h1 class="title">메인 페이지</h1>
+
 
     <div class="mainslide">
         <input type="radio" name="slide" id="slide01" checked>
@@ -57,7 +57,6 @@
                         <label for="slide02" class="left"></label>
                         <label for="slide01" class="right"></label>
                     </div>
-
                 </div>
             </ul>
         </div>
