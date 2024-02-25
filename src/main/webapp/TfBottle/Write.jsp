@@ -67,20 +67,18 @@
                  form.title.focus();
                  return false;
              }
-             if(!form.content.value){
+             if(!form.contents.value){
                  alert("내용을 입력 하세요");
-                 form.content.focus();
+                 form.contents.focus();
                  return false;
              }
          }
      </script>
 </head>
 <body>
-<jsp:include page="../link/Link.jsp"></jsp:include>
 <meta charset="UTF-8">
 <h2>회원제 게시판 - 글쓰기</h2>
-
-<form name="writeFrm" method="post" action="/mvcboard/Write.do" onsubmit="return validateForm(this)">
+<form name="writeFrm" method="post" action="/mvcboard/write.do" onsubmit="return validateForm(this)">
      <table border="1" width="90%">
           <tr>
                <td>제목</td>
@@ -96,7 +94,6 @@
                <button type="reset">다시 입력</button>
                <button type="submit">작성 완료</button>
           </div>
-
 </form>
 </body>
 </html>

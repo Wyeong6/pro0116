@@ -17,8 +17,8 @@ public class BoardDAO extends DBConnPool {
         int result = 0;
         //DB에 BOARD테이블에 맞춰서 작성
         try {
-            String query = "INSERT INTO scott.board( "
-                    + "board_id,title,contents,user_id,post_date)"
+            String query = " INSERT INTO scott.board ( "
+                    + " board_id, title, contents, user_id, post_date)"
                     + " VALUES ("
                     + " scott.seq_bottle_num.nextval, ?,?,?,sysdate)";
 
@@ -27,20 +27,16 @@ public class BoardDAO extends DBConnPool {
             psmt.setString(2, dto.getContents());
             psmt.setString(3, dto.getUser_id());
 
-            System.out.println(dto.getTitle());
-            System.out.println(dto.getContents());
-            System.out.println(dto.getUser_id());
-
             //반환 값으로  , executeUpdate() 반환값은 숫자
             result = psmt.executeUpdate();
             System.out.println("반환값 확인" + result);
+
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("insertWrite 오류발생");
         }
         return result;
     }
-
 
 
     // 랜덤 페이지
@@ -116,8 +112,6 @@ public class BoardDAO extends DBConnPool {
             psmt = con.prepareStatement(query);
             psmt.setString(1, map.get("start").toString());
             psmt.setString(2, map.get("end").toString());
-            System.out.println("start : " + map.get("start"));
-            System.out.println("end : " + map.get("end"));
 
             // 쿼리문 실행 (5)
             rs = psmt.executeQuery();
@@ -128,8 +122,8 @@ public class BoardDAO extends DBConnPool {
                 dto.setBoard_id(rs.getString("board_id"));
                 dto.setTitle(rs.getString("title"));
                 dto.setContents(rs.getString("contents"));
-                dto.setUser_id(rs.getString("user_id"));
                 dto.setPost_date(rs.getDate("post_date"));
+                dto.setUser_id(rs.getString("user_id"));
 
                 // 반환할 결과 목록에 게시물 추가
                 bbs.add(dto);

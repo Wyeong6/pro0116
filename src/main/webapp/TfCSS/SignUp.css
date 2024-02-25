@@ -1,0 +1,152 @@
+/* 헤더 */
+
+* {margin:0;padding:0;}
+
+.linavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+.linavbar_logo{
+    font-size: 25px;
+    color: gray;
+    margin: 20px;
+}
+
+.linavbar_logo i{
+    color: #d49466;
+}
+
+.linavbar_menu{
+    display: flex;
+    list-style: none;
+    margin: 20px;
+}
+
+.linavbar_menu li:hover {
+    background-color: #d49466;
+    border-radius: 6px;
+}
+
+.linavbar_menu li{
+    padding: 20px;
+    font-size: 15px;
+}
+
+/* 섹션 */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+section h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+section form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+section form input[type="text"],
+section form input[type="password"],
+section form input[type="email"],
+section form select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 16px;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+section form button,
+section form input[type="button"] {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0fb1b6;
+    color: white;
+    cursor: pointer;
+    
+
+}
+
+section form button:hover,
+section form input[type="button"]:hover {
+    background-color: #0fb1b6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    section form {
+        width: 90%;
+        margin: 20px;
+    }
+}
+
+
+/* 푸터 */
+footer {
+    width: 100%;
+    background-color: white;
+    color: gray;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.footerp {
+    text-align: center;
+    font-size: 12px;
+}

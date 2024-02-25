@@ -4,22 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>게시판</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/TfCSS/List.css">
     <style>
         a{text-decoration: none;}
     </style>
 </head>
 <body>
-<%--Link.jsp 파일을 현재 파일에 include 해서 포함시킴--%>
-<jsp:include page="../link/Link.jsp"></jsp:include>
-    <h2>게시판 - 목록</h2>
-    <%--검색 폼--%>
+<nav class="linavbar">
+    <div class="linavbar_logo">
+        <%--<img src="경로" alt="예시 이미지">--%>
+        <i class="lifab fa-accusoft"></i>
+        <a href="../TfBottle/MainPage.jsp">1일 1편지</a>
+    </div>
+    <%--메뉴--%>
+    <ul class="linavbar_menu">
+        <li><a href="../TfBottle/MainPage.jsp">Home</a></li>
+        <%--로그인 상태에 따라--%>
+        <% if (session.getAttribute("user_id") == null) { %>
+        <li><a href="../TfBottle/Login.jsp">로그인</a></li>
+        <% }else { %>
+        <li><a href="../TfBottle/Logout.jsp">로그아웃</a></li>
+        <% } %>
+        <li><a href="../TfBottle/SignUp.jsp">회원가입</a></li>
+    </ul>
+</nav>
+
+<div class="list">
+<h2 class="listtitle">편지 목록</h2>
+<%--검색 폼--%>
     <form method="get">
         <table border="1" width="90%">
             <tr>
                 <td align="center">
                     <select name="searchField">
                         <option value="title">제목</option>
-                        <option value="content">내용</option>
                     </select>
                     <input type="text" name="searchWord">
                     <input type="submit" value="검색">
@@ -59,14 +80,42 @@
                 </c:forEach>
             </c:otherwise>
         </c:choose>
-    </table>
-    <table border="1" width="90%">
-
-        <tr align="center">
+    </table >
+    <div class="paging">
+    <table class="paging" border="1" width="90%">
+        <tr>
             <td>
                 ${map.pagingImg}
             </td>
         </tr>
     </table>
+    </div>
+    </div>
+<footer>
+    <div class="footer-wrapper">
+        <div class="footer-section">
+            상호명 : 키플래이(KeyPlay)<br/>
+            대표자 : 정아람<br/>
+            사업자등록번호 : 344-73-00485<br/>
+            통신판매업번호 : 제2021-대구남구-0465호<br/>
+        </div>
+        <div class="footer-section">
+            메일 : keyplayteam@gmail.com<br/>
+            사업장 : 대구광역시 남구 대명로 66, 대명프라임시티 404-39호<br/>
+            전화 : 070-8095-1836<br/>
+        </div>
+        <div class="footer-section">
+            <a href="#">이용약관</a><br/>
+            <a href="#">개인정보취급방침</a><br/>
+            <a href="#">운영정책</a><br/>
+            <a href="#">PartnerCenter</a><br/>
+        </div>
+        <div class="footer-section">
+            호스팅제공 코스모스팜소프웨어<br/>
+        </div>
+    </div>
+    <p class="footerp">Copyright © 2024 랜덤 편지. All right reserved.</p><br/>
+</footer>
+
 </body>
 </html>

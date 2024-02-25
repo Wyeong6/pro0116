@@ -7,7 +7,7 @@
   <title> 게시판</title>
 </head>
 <body>
-<jsp:include page="../link/Link.jsp"></jsp:include>
+
 <h2>게시판 - 상세 보기(View)</h2>
 <table border="1" width="90%">
   <colgroup>

@@ -25,7 +25,7 @@ public class DeleteController extends HttpServlet {
 
         // 세션에서 아이디 가져오기
         HttpSession session = req.getSession();
-        String sessionId = (String) session.getAttribute("User");
+        String sessionId = (String) session.getAttribute("user_id");
 
         BoardDAO dao = new BoardDAO();
 

@@ -9,32 +9,32 @@ public class UserDAO extends DBConnPool {
         super();
     }
 
-  public UserDTO getUserDTO(String userId, String password) {
+    public UserDTO getUserDTO(String userId, String password) {
         /*로그인*/
 
-      UserDTO dto = new UserDTO();
+        UserDTO dto = new UserDTO();
 
-      try {
-          String query = " SELECT * FROM scott.users WHERE user_id = ? AND password = ?";
-          psmt = con.prepareStatement(query);
-          psmt.setString(1, userId);
-          psmt.setString(2, password);
-          rs = psmt.executeQuery();
+        try {
+            String query = " SELECT * FROM scott.users WHERE user_id = ? AND password = ?";
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, userId);
+            psmt.setString(2, password);
+            rs = psmt.executeQuery();
 
-          while (rs.next()) {
-              dto.setUser_id(rs.getString("user_id"));
-              dto.setPassword(rs.getString("password"));
-              dto.setName(rs.getString("name"));
-              dto.setCountry(rs.getString("country"));
-              dto.setEmail(rs.getString("email"));
-          }
-      } catch (SQLException e) {
-          e.printStackTrace();
-      } finally {
-          close(); // 자원 해제
-      }
-      return dto;
-  }
+            while (rs.next()) {
+                dto.setUser_id(rs.getString("user_id"));
+                dto.setPassword(rs.getString("password"));
+                dto.setName(rs.getString("name"));
+                dto.setCountry(rs.getString("country"));
+                dto.setEmail(rs.getString("email"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(); // 자원 해제
+        }
+        return dto;
+    }
 
     public int addminMember(UserDTO dto) {
         //회원가입
@@ -62,7 +62,7 @@ public class UserDAO extends DBConnPool {
     public String findld(String name, String email) {
         /*아이디 찾기*/
         UserDTO dto = new UserDTO();
-        String id= "";
+        String id = "";
 
         try {
             String query = " SELECT user_id FROM scott.users WHERE name=? AND email=?";
@@ -82,7 +82,30 @@ public class UserDAO extends DBConnPool {
         return id;
     }
 
+    public boolean check(UserDTO dto) {
+        boolean result = false;
 
+        String sql = "SELECT user_id FROM scott.users WHERE user_id=?";
+        try {
+            psmt = con.prepareStatement(sql);
+            psmt.setString(1, dto.getUser_id());
 
+            rs = psmt.executeQuery();
 
+            result = rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("아이디중복확인실패");
+
+        }
+        return result;
+    }
 }
+
+
+
+
+
+
+
+

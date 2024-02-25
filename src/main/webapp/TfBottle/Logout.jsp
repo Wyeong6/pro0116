@@ -4,7 +4,7 @@
     session.invalidate();
 
     // 속성 삭제 후 페이지 이동
-    response.sendRedirect("Login.jsp");
+    response.sendRedirect("MainPage.jsp");
 %>
 <html>
 <head>

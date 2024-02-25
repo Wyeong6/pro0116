@@ -20,7 +20,7 @@
 </head>
 <body>
 <%--Link.jsp 파일을 현재 파일에 include 해서 포함시킴--%>
-<jsp:include page="../link/Link.jsp"></jsp:include>
+
 <h2> 게시판 - 수정하기</h2>
 <%-- 내용 수정후 submit으로 form값을 post 방식으로 edit.do 매핑된곳으로 보내기 --%>
 <form name="writeFrm" method="post" action="/mvcboard/edit.do" onsubmit="return validateForm(this);">

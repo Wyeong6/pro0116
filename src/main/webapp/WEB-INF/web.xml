@@ -11,15 +11,6 @@
         <param-name>PAGES_PER_BLOCK</param-name>
         <param-value>5</param-value>
     </context-param>
-
-    <servlet>
-        <servlet-name>BoardList</servlet-name>
-        <servlet-class>Controller.ListController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>BoardList</servlet-name>
-        <url-pattern>/Tfbottle/LetterList.do</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>20</session-timeout>
 

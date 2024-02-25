@@ -7,42 +7,50 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import util.JSFunction;
 
 import java.io.IOException;
 
-@WebServlet("/mvcboard/Write.do")
+@WebServlet("/mvcboard/write.do")
 public class WriteController  extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        String board_id = req.getParameter("board_id");
+        BoardDAO dao = new BoardDAO();
+        BoardDTO dto = dao.selectView(board_id);
+
+        req.setAttribute("dto", dto);
+        req.getRequestDispatcher("/TfBottle/Write.jsp").forward(req, resp);
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        String title = req.getParameter("title");
+        String contents = req.getParameter("contents");
 
-        try {
-            BoardDTO dto = new BoardDTO();
+        HttpSession session = req.getSession();
+        String user_id = (String) session.getAttribute("user_id");
 
-            dto.setUser_id(req.getParameter("user_id"));
-            dto.setTitle(req.getParameter("title"));
-            dto.setContents(req.getParameter("contents"));
+        BoardDTO dto = new BoardDTO();
+        dto.setTitle(title);
+        dto.setContents(contents);
+        dto.setUser_id(user_id);
 
-            System.out.println(req.getParameter("user_id"));
-            System.out.println(req.getParameter("title"));
-            System.out.println(req.getParameter("contents"));
+        BoardDAO dao = new BoardDAO();
+        int result = dao.insertWrite(dto);
 
-            BoardDAO dao = new BoardDAO();
-            int result = dao.insertWrite(dto);
+        dao.close();
 
-            dao.close();
-
-            if (result == 1) {
-                resp.sendRedirect("/TfBottle/MainPage.jsp");
-            } else {
-                JSFunction.alertLocation(resp, "글쓰기 실패", "./TfBottle/MainPage.do");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("doPost 오류발생");
+        if(result == 1){ // 성공
+            resp.sendRedirect("../mvcboard/list.do?user_id="+user_id);
+        }else{ // 실패
+            JSFunction.alertBack(resp, "글쓰기 실패");
         }
-
     }
 }
