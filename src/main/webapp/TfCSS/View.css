@@ -1,7 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
 /* 헤더 */
-
-* {margin:0;padding:0;}
-
 .linavbar {
     display: flex;
     justify-content: space-between;
@@ -46,17 +50,24 @@ a{
 }
 
 /*메인*/
-
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
 .letter {
     width: 900px;
     height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px auto;
+    margin: 25px auto;
     border-radius: 20px;
     background-color: #f2f2f2;
     box-shadow: 0 4px 6px rgba(15,177,182);
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .lettertitle {
@@ -68,8 +79,9 @@ a{
     font-style: normal;
     font-size: 20px;
 }
+
 .lettertitle th {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 
@@ -82,23 +94,34 @@ a{
     margin-top: 30px;
 }
 .letterwirter tr {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .lettercontents {
-    padding : 5%;
+
     font-family: "Noto Serif KR", serif;
     font-weight: 600;
     font-style: normal;
+    width : 700px;
+
 }
 .lettercontents td{
+    word-break:break-all;
+    word-wrap:break-word;"
     font-size: 20px;
-    word-wrap: break-word;
-    white-space: pre-line;
+    overflow:hidden;
+    word-wrap:break-word;
+
 }
+
+/*.contentstb{
+    width:100px;
+    overflow:hidden;
+    word-wrap:break-word;
+}*/
 .letterdate {
     position: relative;
-    top : 30%;
+    top : 10px;
     left: 30%;
     font-family: "Noto Serif KR", serif;
     font-weight: 600;
@@ -106,13 +129,25 @@ a{
 }
 
 
+button {
+    background-color: #0fb1b6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 20px;
+}
+.button-group {
+    position: relative;
+    bottom: 8%;
+}
+
 
 
 
 /* 푸터 */
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     background-color: white;
     color: gray;

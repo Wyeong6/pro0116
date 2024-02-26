@@ -3,36 +3,90 @@
          pageEncoding="UTF-8"%>
 <html>
 <head>
+
+  <link rel="stylesheet" href="/TfCSS/View.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8">
   <title> 게시판</title>
+  <%--버튼 클릭시 정말 삭제할꺼냐고 물어보는 스크립트--%>
+  <script>
+    function confirmDelete(board_id) {
+      if (confirm('정말 삭제하시겠습니까?')) {
+        // 삭제되면 get 방식으로 delete.do 매핑
+        location.href = '../mvcboard/delete.do?board_id=' + board_id;
+      }
+    }
+  </script>
 </head>
 <body>
 
-<h2>게시판 - 상세 보기(View)</h2>
-<table border="1" width="90%">
-  <colgroup>
-    <col width="15%"/> <col width="35%"/>
-    <col width="15%"/> <col width="*"/>
-  </colgroup>
+<%--로고--%>
+<nav class="linavbar">
+  <div class="linavbar_logo">
+    <%--<img src="경로" alt="예시 이미지">--%>
+    <i class="lifab fa-accusoft"></i>
+    <a href="../TfBottle/MainPage.jsp">1일 1편지</a>
+  </div>
+  <%--메뉴--%>
+  <ul class="linavbar_menu">
+    <li><a href="../TfBottle/MainPage.jsp">Home</a></li>
+    <%--로그인 상태에 따라--%>
+    <% if (session.getAttribute("user_id") == null) { %>
+    <li><a href="../TfBottle/Login.jsp">로그인</a></li>
+    <% }else { %>
+    <li><a href="../TfBottle/Logout.jsp">로그아웃</a></li>
+    <% } %>
+    <li><a href="../TfBottle/SignUp.jsp">회원가입</a></li>
+  </ul>
+</nav>
 
+<div class="letter">
   <!-- 게시글 정보 -->
-  <tr>
-    <td>번호</td> <td>${ dto.board_id }</td>
-    <td>작성자</td> <td>${ dto.user_id }</td>
-  </tr>
-  <tr>
-    <td>작성일</td> <td>${ dto.post_date }</td>
-  </tr>
-  <tr>
-    <td>제목</td>
-    <td colspan="3">${ dto.title }</td>
-  </tr>
-  <tr>
-    <td>내용</td>
-    <td colspan="3" height="100">
-      ${ dto.contents }
-    </td>
-  </tr>
+  <div class="lettertitle">
+    <table>
+      <tr>
+        <th>${dto.title}</th>
+      </tr>
+    </table>
+  </div>
+
+  <div class="letterwirter">
+    <table>
+      <tr>
+        <td>${dto.country}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="letterwirter">
+    <table>
+      <tr>
+        <td>from. ${dto.user_id}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="lettercontents">
+    <table class="contentstb">
+      <tr >
+        <td class="aa">${dto.contents}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="letterdate">
+    <table>
+      <tr class="letterdate">
+        <td>${dto.post_date}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="button-group">
+<table border="1" width="100%">
   <!-- 하단 메뉴(버튼) -->
   <tr>
     <td colspan="4" align="center">
@@ -60,14 +114,31 @@
     </td>
   </tr>
 </table>
-<%--버튼 클릭시 정말 삭제할꺼냐고 물어보는 스크립트--%>
-<script>
-  function confirmDelete(board_id) {
-    if (confirm('정말 삭제하시겠습니까?')) {
-      // 삭제되면 get 방식으로 delete.do 매핑
-      location.href = '../mvcboard/delete.do?board_id=' + board_id;
-    }
-  }
-</script>
+</div>
+<footer>
+  <div class="footer-wrapper">
+    <div class="footer-section">
+      상호명 : 1일 1편지(1Day 1Letter)<br/>
+      대표자 : 김우영<br/>
+      사업자등록번호 : 111-22-12345<br/>
+      통신판매업번호 : 제1234-부산수영구-1234호<br/>
+    </div>
+    <div class="footer-section">
+      메일 : rnwnsah8686@naver.com<br/>
+      사업장 : 부산광역시 부산구 부산동 11, 국비지원 503호<br/>
+      전화 : 123-1234-5678<br/>
+    </div>
+    <div class="footer-section">
+      <a href="#">이용약관</a><br/>
+      <a href="#">개인정보취급방침</a><br/>
+      <a href="#">운영정책</a><br/>
+      <a href="#">PartnerCenter</a><br/>
+    </div>
+    <div class="footer-section">
+      호스팅제공 KooJunMo소프웨어<br/>
+    </div>
+  </div>
+  <p class="footerp">Copyright © 2024 1일 1편지. All right reserved.</p><br/>
+</footer>
 </body>
 </html>

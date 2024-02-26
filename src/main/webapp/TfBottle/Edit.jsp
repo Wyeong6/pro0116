@@ -51,25 +51,28 @@
 <div class="title-wrapper">
     <h2>편지 수정</h2>
 </div>
-
 <%--내용 수정후 submit으로 form값을 post 방식으로 edit.do 매핑된곳으로 보내기--%>
 <form name="writeFrm" method="post" action="/mvcboard/edit.do" onsubmit="return validateForm(this);">
     <input type="hidden" name="board_id" value="${dto.board_id}"/>
-    <table class="writebox" border="1" width="90%">
-        <tr>
-            <td>제목</td>
-            <td>
-                <input type="text" name="title" value="${dto.title}"/>
-            </td>
-        </tr>
-        <tr>
-            <td>내용</td>
-            <td>
-                <textarea name="contents" onkeyup="countChar(this)">${dto.contents}</textarea>
-                <div id="charNum"></div>
-            </td>
-        </tr>
-    </table>
+    <div class="write">
+        <form name="writeFrm" method="post" action="/mvcboard/write.do" onsubmit="return validateForm(this)">
+            <div class="writeboxwrap">
+                <table class="writebox">
+                    <tr>
+                        <td>제목</td>
+                        <td>
+                            <input type="text" name="title" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>내용</td>
+                        <td>
+                            <textarea name="contents" class="content" onkeyup="countChar(this)"></textarea>
+                            <div id="charNum"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
     <div class="button-group">
         <button type="submit">작성 완료</button>
         <button type="reset">다시 입력</button>

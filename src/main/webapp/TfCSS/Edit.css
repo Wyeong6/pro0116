@@ -1,11 +1,8 @@
-*{
-    padding: 0;
-    margin: 0;
-    border: none;
+/* 헤더 */
+
+* {margin:0;padding:0;
 }
 
-
-/* 헤더 */
 .linavbar {
     display: flex;
     justify-content: space-between;
@@ -42,15 +39,13 @@ a{
     margin: 20px;
 }
 
-.linavbar_menu li:hover {
-    background-color: #d49466;
-    border-radius: 6px;
-}
+
 
 .linavbar_menu li{
     padding: 20px;
     font-size: 15px;
 }
+
 
 /* 푸터 */
 
@@ -59,7 +54,7 @@ a{
 /* 메인(섹션) */
 
 body {
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
@@ -82,6 +77,9 @@ body {
     padding: 20px;
     margin: 0 auto;
     width: 65%;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .writebox input[type="text"], .writebox textarea {
@@ -96,30 +94,22 @@ body {
     font-weight: 600;
     font-style: normal;
 }
-.writebox input[name="user_id"] {
-    width: 10%;
-    text-align: center;
-    font-size: 30px;
-    background: none;
-    font-family: "Noto Serif KR", serif;
-    font-weight: 600;
-    font-style: normal;
-}
 
 .writebox td:first-child {
     color: #fff;
     background-color: #8b8b8b;
     font-size: 28px;
-    padding: 10px;
     text-align: center;
     border: 2px solid #ddd;
     border-radius: 10px;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .writebox td:last-child {
     height: auto;
     border-radius: 10px;
-
         font-family: "Noto Serif KR", serif;
         font-weight: 600;
         font-style: normal;
@@ -132,14 +122,14 @@ body {
     font-weight: 600;
     font-style: normal;
 }
-
-td {
-    position: relative;
+.content {
+    height: 400px;
+    resize: none;
 }
 
 textarea {
     width: 90%;
-    height: 500px;
+    height: 400px;
     resize: none;
     font-family: "Noto Serif KR", serif;
     font-weight: 600;
@@ -157,7 +147,7 @@ textarea {
 .button-group {
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: auto;
     width: 100%;
 }
 
@@ -185,6 +175,8 @@ textarea {
 /*------------------------------------------------------------------------------------------------------------------*/
 /* 푸터 */
 footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
     background-color: white;
     color: gray;

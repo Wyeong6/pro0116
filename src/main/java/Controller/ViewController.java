@@ -19,6 +19,9 @@ public class ViewController extends HttpServlet {
         // 편지 불러오기
         BoardDAO dao = new BoardDAO();
         BoardDTO dto = dao.selectRandomPage();
+
+        dto.setContents(dto.getContents().replaceAll("\r\n", "<br/>"));
+
         req.setAttribute("dto", dto); // JSP 페이지로 dto 객체를 전달합니다.
         req.getRequestDispatcher("/TfBottle/LetterView.jsp").forward(req, resp);
         dao.close();
