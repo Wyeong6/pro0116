@@ -28,8 +28,17 @@
         <li><a href="../TfBottle/SignUp.jsp">회원가입</a></li>
     </ul>
 </nav>
-<%= request.getAttribute("LoginErrMsg") == null ?
-        "" : request.getAttribute("LoginErrMsg") %>
+<%
+    String LoginErrMsg = (String) session.getAttribute("LoginErrMsg");
+    if (LoginErrMsg != null) {
+        session.removeAttribute("LoginErrMsg");
+%>
+<script>
+    alert('<%= LoginErrMsg %>');
+</script>
+<%
+    }
+%>
 <script>
     function validateForm(form) {
         if (!form.user_id.value) {

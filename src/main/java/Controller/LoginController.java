@@ -46,11 +46,10 @@ public class LoginController extends HttpServlet {
                 // 세션에 쿠키의 이름과 값을 저장
                 req.getSession().setAttribute(cookie.getName(), cookie.getValue());
             }
-
             resp.sendRedirect("/TfBottle/MainPage.jsp");
         } else {
-            req.setAttribute("LoginErrMsg", "로그인 실패!");
-            req.getRequestDispatcher("/TfBottle/Login.jsp").forward(req, resp);
+            req.getSession().setAttribute("LoginErrMsg", "아이디와 비밀번호가 틀렸습니다.");
+            resp.sendRedirect("/TfBottle/Login.jsp");
         }
     }
 }
