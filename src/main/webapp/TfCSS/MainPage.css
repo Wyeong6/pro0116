@@ -1,0 +1,123 @@
+/* 헤더 */
+
+* {margin:0;padding:0;}
+
+.linavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+.linavbar_logo{
+    font-size: 25px;
+    color: gray;
+    margin: 20px;
+}
+
+.linavbar_logo i{
+    color: #d49466;
+}
+
+.linavbar_menu{
+    display: flex;
+    list-style: none;
+    margin: 20px;
+}
+
+
+
+.linavbar_menu li{
+    padding: 20px;
+    font-size: 15px;
+}
+
+/* 메인 */
+
+
+.mainpic {
+    background-image: url("/img/mainletter.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80%;
+}
+
+
+
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonwrap ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    padding-top: 10%;
+
+}
+
+.buttonwrap {
+    display: flex;
+    justify-content: center;
+}
+.buttonwrap li {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.mainmsg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 72px;
+
+}
+/* 푸터 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: gray;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.footerp {
+    text-align: center;
+    font-size: 12px;
+}

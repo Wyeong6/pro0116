@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
+/* 헤더 */
+.linavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+.linavbar_logo{
+    font-size: 25px;
+    color: gray;
+    margin: 20px;
+}
+
+.linavbar_logo i{
+    color: #d49466;
+}
+
+.linavbar_menu{
+    display: flex;
+    list-style: none;
+    margin: 20px;
+}
+
+
+
+.linavbar_menu li{
+    padding: 20px;
+    font-size: 15px;
+}
+
+/* 푸터 */
+footer {
+    width: 100%;
+    background-color: white;
+    color: gray;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.footerp {
+    text-align: center;
+    font-size: 12px;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+.lobody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.login-wrapper{
+    width: 400px;
+    padding: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.login-wrapper > h2{
+    font-size: 30px;
+    color: #0fb1b6;
+    margin-bottom: 20px;
+}
+
+.login-wrapper > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.login-wrapper > form > input{
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+    font-size: 18px;
+    border: 1px solid gray;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.login-wrapper > form > input::placeholder{
+    color: #D2D2D2;
+}
+
+.login-wrapper > form > input[type="submit"]{
+    color: #fff;
+    font-size: 20px;
+    background-color: #0fb1b6;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.login-wrapper > form > label{
+    color: #999999;
+    font-size: 16px;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.login-wrapper > form > input[type="checkbox"]{
+    display: none;
+
+}
+.login-wrapper > form > input[type="checkbox"] + label{
+    cursor: pointer;
+    padding-left: 26px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.login-wrapper > form > input[type="checkbox"]:checked + label{
+    background-repeat: no-repeat;
+    background-size: contain;
+}
