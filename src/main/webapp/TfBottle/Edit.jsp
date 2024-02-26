@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>게시판</title>
+    <link rel="stylesheet" href="/TfCSS/Edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
     <script>
         function validateForm(form){
             if(form.title.value == ""){
@@ -16,36 +20,89 @@
                 return false;
             }
         }
+        function countChar(val) {
+            var len = val.value.length;
+            document.getElementById('charNum').innerHTML = '글자수 : ' + len;
+        };
     </script>
 </head>
 <body>
-<%--Link.jsp 파일을 현재 파일에 include 해서 포함시킴--%>
 
-<h2> 게시판 - 수정하기</h2>
-<%-- 내용 수정후 submit으로 form값을 post 방식으로 edit.do 매핑된곳으로 보내기 --%>
+<%--로고--%>
+<nav class="linavbar">
+    <div class="linavbar_logo">
+        <%--<img src="경로" alt="예시 이미지">--%>
+        <i class="lifab fa-accusoft"></i>
+        <a href="../TfBottle/MainPage.jsp">1일 1편지</a>
+    </div>
+    <%--메뉴--%>
+    <ul class="linavbar_menu">
+        <li><a href="../TfBottle/MainPage.jsp">Home</a></li>
+        <%--로그인 상태에 따라--%>
+        <% if (session.getAttribute("user_id") == null) { %>
+        <li><a href="../TfBottle/Login.jsp">로그인</a></li>
+        <% }else { %>
+        <li><a href="../TfBottle/Logout.jsp">로그아웃</a></li>
+        <% } %>
+        <li><a href="../TfBottle/SignUp.jsp">회원가입</a></li>
+    </ul>
+</nav>
+
+<div class="title-wrapper">
+    <h2>편지 수정</h2>
+</div>
+
+<%--내용 수정후 submit으로 form값을 post 방식으로 edit.do 매핑된곳으로 보내기--%>
 <form name="writeFrm" method="post" action="/mvcboard/edit.do" onsubmit="return validateForm(this);">
     <input type="hidden" name="board_id" value="${dto.board_id}"/>
-    <table border="1" width="90%">
-        <tr>
-            <td>작성자</td>
-            <td><input name="user_id" style="width: 150px;" value="${dto.user_id}" disabled/></td>
-        </tr>
+    <table class="writebox" border="1" width="90%">
         <tr>
             <td>제목</td>
-            <td><input type="text" name="title" style="width: 90%;" value="${dto.title}"/></td>
+            <td>
+                <input type="text" name="title" value="${dto.title}"/>
+            </td>
         </tr>
         <tr>
             <td>내용</td>
-            <td><textarea name="contents" style="width: 90%; height: 100px;">${ dto.contents}</textarea></td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center">
-                <button type="submit">작성 완료</button>
-                <button type="reset">다시 입력</button>
-                <button type="button" onclick="location.href='/mvcboard/list.do';">목록 보기</button>
+            <td>
+                <textarea name="contents" onkeyup="countChar(this)">${dto.contents}</textarea>
+                <div id="charNum"></div>
             </td>
         </tr>
     </table>
+    <div class="button-group">
+        <button type="submit">작성 완료</button>
+        <button type="reset">다시 입력</button>
+        <button type="button" onclick="location.href='/mvcboard/list.do';">목록 보기</button>
+    </div>
 </form>
+
+<footer>
+    <div class="footer-wrapper">
+        <div class="footer-section">
+            상호명 : 1일 1편지(1Day 1Letter)<br/>
+            대표자 : 김우영<br/>
+            사업자등록번호 : 111-22-12345<br/>
+            통신판매업번호 : 제1234-부산수영구-1234호<br/>
+        </div>
+        <div class="footer-section">
+            메일 : rnwnsah8686@naver.com<br/>
+            사업장 : 부산광역시 부산구 부산동 11, 국비지원 503호<br/>
+            전화 : 123-1234-5678<br/>
+        </div>
+        <div class="footer-section">
+            <a href="#">이용약관</a><br/>
+            <a href="#">개인정보취급방침</a><br/>
+            <a href="#">운영정책</a><br/>
+            <a href="#">PartnerCenter</a><br/>
+        </div>
+        <div class="footer-section">
+            호스팅제공 KooJunMo소프웨어<br/>
+        </div>
+    </div>
+    <p class="footerp">Copyright © 2024 1일 1편지. All right reserved.</p><br/>
+</footer>
+
 </body>
 </html>
+

@@ -38,10 +38,6 @@ a{
     margin: 20px;
 }
 
-.linavbar_menu li:hover {
-    background-color: #d49466;
-    border-radius: 6px;
-}
 
 .linavbar_menu li{
     padding: 20px;
@@ -105,7 +101,7 @@ section form input[type="button"] {
     background-color: #0fb1b6;
     color: white;
     cursor: pointer;
-    
+
 
 }
 

@@ -1,0 +1,205 @@
+/* 헤더 */
+
+* {margin:0;padding:0;
+}
+
+.linavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+.linavbar_logo{
+    font-size: 25px;
+    color: gray;
+    margin: 20px;
+}
+
+.linavbar_logo i{
+    color: #d49466;
+}
+
+.linavbar_menu{
+    display: flex;
+    list-style: none;
+    margin: 20px;
+}
+
+
+
+.linavbar_menu li{
+    padding: 20px;
+    font-size: 15px;
+}
+
+
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.title-wrapper {
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.title-wrapper > h2 {
+    color: #595959;
+    font-size: 30px;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*.writeboxwrap {
+
+    height: 500px;
+}*/
+
+.writebox {
+    border:none;
+    padding: 20px;
+    margin: 0 auto;
+    width: 65%;
+}
+
+
+.writebox input[type="text"], .content {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    background-color: #ffffff;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.writebox td:first-child {
+    color: #fff;
+    background-color: #8b8b8b;
+    font-size: 28px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.writebox td:last-child {
+    height: auto;
+    border-radius: 10px;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.content {
+    height: 400px;
+    resize: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%; /* 버튼 그룹의 너비를 100%로 설정합니다 */
+}
+
+.button-group button {
+    width: 150px; /* 버튼의 가로 길이를 더 크게 설정합니다 */
+    padding: 15px; /* 패딩을 더 크게 설정하여 버튼의 크기를 키웁니다 */
+    font-size: 16px; /* 폰트 사이즈를 증가시켜 버튼의 크기를 키웁니다 */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #8b8b8b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 10px; /* 버튼 사이의 간격을 더 크게 설정합니다 */
+    font-family: "Noto Serif KR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.button-group button:hover {
+    background-color: #595959;
+}
+
+/* 푸터 */
+footer {
+    width: 100%;
+    background-color: white;
+    color: gray;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.footerp {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* 푸터 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: gray;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.footerp {
+    text-align: center;
+    font-size: 12px;
+}

@@ -45,6 +45,13 @@
                     <input type="text" name="searchWord">
                     <input type="submit" value="검색">
                 </td>
+                <td>
+<%--
+                    <form action="/mvcboard/write.do" method="get">
+--%>
+                        <button class="writerbutton"><a class="abutton" href="/mvcboard/write.do" methods="get">편지 쓰기</a></button>
+                    <%--</form>--%>
+                </td>
             </tr>
         </table>
     </form>
@@ -80,7 +87,8 @@
                 </c:forEach>
             </c:otherwise>
         </c:choose>
-    </table >
+
+    </table>
     <div class="paging">
     <table class="paging" border="1" width="90%">
         <tr>
