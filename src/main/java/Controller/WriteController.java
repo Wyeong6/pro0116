@@ -50,7 +50,7 @@ public class WriteController  extends HttpServlet {
         if(result == 1){ // 성공
             resp.sendRedirect("../mvcboard/list.do?user_id="+user_id);
         }else{ // 실패
-            JSFunction.alertBack(resp, "글쓰기 실패");
+            JSFunction.alertBack(resp, "글자수가 너무 많습니다! (최대 500자)");
         }
     }
 }

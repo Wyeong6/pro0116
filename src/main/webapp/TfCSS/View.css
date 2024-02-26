@@ -71,7 +71,6 @@ body {
 }
 
 .lettertitle {
-    margin-top : 5%;
     background-color: #f2f2f2;
     text-align: center;
     font-family: "Noto Serif KR", serif;
@@ -107,10 +106,10 @@ body {
 }
 .lettercontents td{
     word-break:break-all;
-    word-wrap:break-word;"
+    word-wrap:break-word;
     font-size: 20px;
     overflow:hidden;
-    word-wrap:break-word;
+
 
 }
 
@@ -121,7 +120,6 @@ body {
 }*/
 .letterdate {
     position: relative;
-    top : 10px;
     left: 30%;
     font-family: "Noto Serif KR", serif;
     font-weight: 600;

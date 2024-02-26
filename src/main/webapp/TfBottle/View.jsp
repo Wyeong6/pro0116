@@ -56,22 +56,14 @@
   <div class="letterwirter">
     <table>
       <tr>
-        <td>${dto.country}</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="letterwirter">
-    <table>
-      <tr>
-        <td>from. ${dto.user_id}</td>
+        <td>작성자. ${dto.user_id}</td>
       </tr>
     </table>
   </div>
 
   <div class="lettercontents">
     <table class="contentstb">
-      <tr >
+      <tr>
         <td class="aa">${dto.contents}</td>
       </tr>
     </table>
@@ -97,7 +89,7 @@
                 session.getAttribute("user_id").toString().equals(dto.getUser_id())) {
       %>
       <%-- 게시글 수정 클릭시 edit.do에 get방식으로 보내기 --%>
-      <button type="button" onclick="location.href = '/mvcboard/edit.do?board_id=${ dto.board_id }';">
+      <button type="button" onclick="location.href = '/mvcboard/edit.do?board_id=${dto.board_id}';">
         게시글 수정
       </button>
       <%-- 게시글 삭제 클릭시 스크립트 confirmDelete 함수 수행 --%>

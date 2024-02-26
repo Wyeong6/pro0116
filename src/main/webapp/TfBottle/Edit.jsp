@@ -55,19 +55,18 @@
 <form name="writeFrm" method="post" action="/mvcboard/edit.do" onsubmit="return validateForm(this);">
     <input type="hidden" name="board_id" value="${dto.board_id}"/>
     <div class="write">
-        <form name="writeFrm" method="post" action="/mvcboard/write.do" onsubmit="return validateForm(this)">
             <div class="writeboxwrap">
                 <table class="writebox">
                     <tr>
                         <td>제목</td>
                         <td>
-                            <input type="text" name="title" />
+                            <input type="text" name="title" value="${dto.title}" />
                         </td>
                     </tr>
                     <tr>
                         <td>내용</td>
                         <td>
-                            <textarea name="contents" class="content" onkeyup="countChar(this)"></textarea>
+                            <textarea name="contents" class="content" onkeyup="countChar(this)">${dto.contents}</textarea>
                             <div id="charNum"></div>
                         </td>
                     </tr>

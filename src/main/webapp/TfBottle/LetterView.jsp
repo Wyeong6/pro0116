@@ -43,7 +43,7 @@
         <div class="letterwirter">
             <table>
                 <tr>
-                    <td>from. ${dto.user_id}</td>
+                    <td>작성자. ${dto.user_id}</td>
                 </tr>
             </table>
         </div>
