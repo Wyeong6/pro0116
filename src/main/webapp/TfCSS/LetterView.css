@@ -98,11 +98,12 @@ a{
 }
 .letterdate {
     position: relative;
-    top : 10px;
     left: 30%;
     font-family: "Noto Serif KR", serif;
     font-weight: 600;
     font-style: normal;
+    border-bottom-width: 62px;
+    bottom: 30px;
 }
 
 

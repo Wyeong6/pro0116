@@ -126,11 +126,11 @@ body {
 }
 
 .button-group button {
-    width: 150px; /* 버튼의 가로 길이를 더 크게 설정합니다 */
-    padding: 15px; /* 패딩을 더 크게 설정하여 버튼의 크기를 키웁니다 */
-    font-size: 16px; /* 폰트 사이즈를 증가시켜 버튼의 크기를 키웁니다 */
+    width: 150px;
+    padding: 15px;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     color: #fff;
     background-color: #8b8b8b;
     cursor: pointer;
@@ -149,6 +149,8 @@ body {
 
 /* 푸터 */
 footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
     background-color: white;
     color: gray;

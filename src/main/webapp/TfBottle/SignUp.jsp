@@ -23,11 +23,11 @@
                     console.log(data);
                     if (!id) return alert("아이디를 입력해주세요");
                     if(data == 'false'){
-
-                        $("#label_id").html("아이디 : 사용 가능한 아이디입니다.");
+                        $("#label_id").html("사용 가능한 아이디입니다.").css("color", "black");
+                        $("#idhidden").val("idhidden");
                     }else{
-                        $("#label_id").html("아이디 : 중복된 아이디입니다.");
-                        $("#label_name").css("color", "red");
+                        $("#label_id").html("중복된 아이디입니다.").css("color", "red");
+
                     }
                 },
                 error:function(){
@@ -41,6 +41,8 @@
         }
 
         function sendMember() {
+
+            var idhiddenValue = document.getElementById("idhidden").value;
             var name = document.getElementById("name").value;
             var id = document.getElementById("id").value;
             var password = document.getElementById("password").value;
@@ -63,10 +65,12 @@
                 email.focus();
                 return false;
 
-            } else {
+            } else if(idhiddenValue === "idhidden"){
                 frmMember.method = "post";
                 frmMember.action = "/01/SignUp.do"
                 frmMember.submit();
+            }else {
+                alert("아이디 중복확인 해주세요");
             }
         }
 
@@ -102,7 +106,7 @@
         <input type="text" id="id" name="id"><br>
 
         <button type="button"  onclick="idcheck()">중복확인</button>
-        <input type="hidden" name="idhidden" value="idunckeck"/>
+        <input type="hidden" id="idhidden" name="idhidden" value="idunckeck"/>
 
         <label for="password">비밀번호:</label>
         <input type="password" id="password" name="password"><br>
@@ -132,15 +136,15 @@
 <footer>
     <div class="footer-wrapper">
         <div class="footer-section">
-            상호명 : 랜덤편지(RANDOM)<br/>
-            대표자 : 구준모<br/>
-            사업자등록번호 : 111-22-12345<br/>
-            통신판매업번호 : 제1234-부산수영구-1234호<br/>
+            상호명 : 1조<br/>
+            대표자 : 송재현<br/>
+            사업자등록번호 : 344-73-00485<br/>
+            통신판매업번호 : 제1234-부산-5678호<br/>
         </div>
         <div class="footer-section">
-            메일 : rnwnsah8686@naver.com<br/>
-            사업장 : 부산광역시 부산구 부산동 11, 국비지원 503호<br/>
-            전화 : 123-1234-5678<br/>
+            메일 : dnduddl1381@gmail.com<br/>
+            사업장 : 부산 부산진구 중앙대로 708 부산파이낸스센터 503호<br/>
+            전화 : 070-1234-5678<br/>
         </div>
         <div class="footer-section">
             <a href="#">이용약관</a><br/>
@@ -149,10 +153,10 @@
             <a href="#">PartnerCenter</a><br/>
         </div>
         <div class="footer-section">
-            호스팅제공 KooJunMo소프웨어<br/>
+            호스팅제공 부산IT교육센터<br/>
         </div>
     </div>
-    <p class="footerp">Copyright © 2024 랜덤 편지. All right reserved.</p><br/>
+    <p class="footerp">Copyright © 2024 1일 1편지. All right reserved.</p><br/>
 </footer>
 </body>
 </html>

@@ -72,25 +72,25 @@
                     </tr>
                 </table>
             </div>
+    </div>
     <div class="button-group">
         <button type="submit">작성 완료</button>
         <button type="reset">다시 입력</button>
         <button type="button" onclick="location.href='/mvcboard/list.do';">목록 보기</button>
     </div>
 </form>
-
 <footer>
     <div class="footer-wrapper">
         <div class="footer-section">
-            상호명 : 1일 1편지(1Day 1Letter)<br/>
-            대표자 : 김우영<br/>
-            사업자등록번호 : 111-22-12345<br/>
-            통신판매업번호 : 제1234-부산수영구-1234호<br/>
+            상호명 : 1조<br/>
+            대표자 : 송재현<br/>
+            사업자등록번호 : 344-73-00485<br/>
+            통신판매업번호 : 제1234-부산-5678호<br/>
         </div>
         <div class="footer-section">
-            메일 : rnwnsah8686@naver.com<br/>
-            사업장 : 부산광역시 부산구 부산동 11, 국비지원 503호<br/>
-            전화 : 123-1234-5678<br/>
+            메일 : dnduddl1381@gmail.com<br/>
+            사업장 : 부산 부산진구 중앙대로 708 부산파이낸스센터 503호<br/>
+            전화 : 070-1234-5678<br/>
         </div>
         <div class="footer-section">
             <a href="#">이용약관</a><br/>
@@ -99,7 +99,7 @@
             <a href="#">PartnerCenter</a><br/>
         </div>
         <div class="footer-section">
-            호스팅제공 KooJunMo소프웨어<br/>
+            호스팅제공 부산IT교육센터<br/>
         </div>
     </div>
     <p class="footerp">Copyright © 2024 1일 1편지. All right reserved.</p><br/>
