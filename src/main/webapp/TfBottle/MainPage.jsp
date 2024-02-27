@@ -41,23 +41,24 @@
   </ul>
 
 <%
-  boolean canReceiveLetter = true; //캔 리시브 레터 (편지를읽을수있음)변수선언 값은 true
+  boolean canReceiveLetter = true; // 쿠키를 읽을 변수선언 값은 true
   Cookie[] cookies = request.getCookies(); // 쿠키 배열을 생성함 이름은 cookies로 생성된 쿠키들을 전부 배열에담음
   if (cookies != null) {  //if 쿠키가 있으면
-    for (Cookie cookie : cookies) { //for문으로 cookie에 cookies를 하나씩 담는다
+    for (Cookie cookie : cookies) { //for문으로 cookies 배열에 cookie를 하나씩 담는다
       if (cookie.getName().equals("receiveCooldown")) { //담는와중에 쿠키의 이름이 "reciveCooldown" 인 쿠키가 나왔을경우!
-        canReceiveLetter = false; // 캔 리시브 레터 (편지읽을수있는) 변수의값이 false가된다
+        canReceiveLetter = false; // 쿠키를 읽을 변수의값이 false가된다
         break; // 즉 reciveCooldown 이라는 쿠키를 찾을때까지 계속 무한반복(for문)이 돈다
       }
     }
   }
 %>
 <script>
+  // 쿠키 생성 만료 날짜를 설정
   function createCookie() {
-    // 쿠키 생성
+
     var date = new Date();
     date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // 24시간
-    var expires = "expires=" + date.toUTCString();
+      var expires = "expires=" + date.toUTCString();
     document.cookie = "receiveCooldown=true; " + expires + "; path=/";
   } // 클릭을했을때 "reciveCooldown"이라는 이름의 쿠키를 만드는 함수(자바스크립트)
   </script>
